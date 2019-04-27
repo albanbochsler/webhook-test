@@ -1,0 +1,268 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>coop</title>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <!-- build:css styles/vendor.css -->
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
+  <script
+    src="https://code.jquery.com/jquery-3.4.0.min.js"
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+    crossorigin="anonymous"></script>
+  <!-- endbuild -->
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+  <!-- build:js scripts/modernizr.js -->
+  <script src="scripts/modernizr.js"></script>
+  <!-- endbuild -->
+  <script>document.addEventListener('DOMContentLoaded', function(e) {
+    console.log(e);
+    var hash = location.hash
+    let checkbox = document.querySelector(hash)
+    let checkboxes = $('.form__checkbox')
+    console.log(hash);
+
+    // function getAllCheckboxes() {
+    //     for (var i = 0, len = checkboxes.length; i < len; i++) {
+    //         var allCheckboxes = checkboxes[i]
+    //         return allCheckboxes
+    //     }
+    // }
+    //
+    // var allCheckboxes = getAllCheckboxes()
+    // console.log(getAllCheckboxes());
+    var fav, favs = [];
+    $(hash).each(function() {
+      hashFav = {id: $(this).attr('id'), value: $(this).prop('checked')};
+      favs.push(hashFav);
+    })
+    $('.form__checkbox').on('click', function() {
+      $('.form__checkbox').each(function() {
+        fav = {id: $(this).attr('id'), value: $(this).prop('checked')};
+        favs.push(fav);
+      })
+      localStorage.setItem("favorites", JSON.stringify(favs));
+    })
+    var favorites = JSON.parse(localStorage.getItem('favorites'));
+    for (var i=0; i<favorites.length; i++) {
+      $('#' + favorites[i].id ).prop('checked', favorites[i].value);
+    }
+
+    function getCheckbox(hash) {
+      let check = document.querySelector(hash)
+      return check
+    }
+    getCheckbox(hash).checked = true
+    var json = encodeURIComponent(JSON.stringify({
+      "Subscriber": {
+        "token": "dcf6c83ddf8601cc34366ab465b89de730782e61",
+        "mtoken": "496593715b4ee7df5.17042509",
+        "barcode": "E7IBYYTI",
+        "signup_group": null,
+        "invitationsignuptoken": null,
+        "optional_package_1": "Ja",
+        "optional_package_2": "",
+        "optional_package_3": "false",
+        "optional_package_4": "",
+        "optional_package_5": "",
+        "optional_package_6": "",
+        "optional_package_7": "",
+        "optional_package_8": "",
+        "optional_package_9": "",
+        "optional_package_10": "",
+        "optional_package_11": "",
+        "optional_package_12": "",
+        "optional_package_13": "",
+        "optional_package_14": "",
+        "optional_package_15": "",
+        "optional_package_16": "",
+        "optional_package_17": "",
+        "optional_package_18": "",
+        "optional_package_19": "",
+        "optional_package_20": "",
+        "gender": "Herr",
+        "title": "",
+        "lastname": "Test",
+        "firstname": "Test",
+        "company": "",
+        "legalform": "",
+        "position": "",
+        "department": "",
+        "branch_of_industry": null,
+        "street": "Tester",
+        "town": "Hamburg",
+        "zip": "22301",
+        "country": "Deutschland",
+        "invoicecompany": "",
+        "invoicefirstname": "",
+        "invoicelastname": "",
+        "invoicestreet": "",
+        "invoicezip": "",
+        "invoicetown": "",
+        "invoicecountry": "",
+        "invoiceemail": null,
+        "invoicebillmark": null,
+        "email": "emailadresse@eventmanager-online.com",
+        "phone": "",
+        "mobilenumber": "",
+        "fax": null,
+        "birthplace": "",
+        "dateofbirth": "0000-00-00",
+        "dateofarrival": "0000-00-00",
+        "timeofarrival": "00:00:00",
+        "dateofdeparture": "0000-00-00",
+        "timeofdeparture": "00:00:00",
+        "arrival_flight": "",
+        "departure_flight": "",
+        "passport": "",
+        "customernumber": "",
+        "manual_confirmed": "Nein",
+        "manual_reminder": "Nein",
+        "manual_thankyou": "Nein",
+        "manual_gift": "Nein",
+        "paid": "Ja",
+        "fee": "1.00",
+        "payment_method": "sixpay_creditcard",
+        "invoicenumber": "FSC-2174",
+        "invoicedate": "2017-06-06",
+        "showdata": "Nein",
+        "entry": "Nein",
+        "note": "-",
+        "attachment_url": "",
+        "language": "de",
+        "state": "Angemeldet",
+        "signup_state": "complete",
+        "delivery_state": "Delivery-2017-06-06 22:54:08",
+        "source": null,
+        "termsok": null,
+        "privacyok": null,
+        "marketingok": null,
+        "last_payment_reminder": "0000-00-00 00:00:00",
+        "deleted": "nein",
+        "created": "2017-06-06 22:51:00",
+        "modified": "2017-06-06 22:51:00"
+      },
+      "Event": {
+        "name": "Events richtig planen",
+        "start_date": "2020-02-29",
+        "start_time": "21:00:00",
+        "end_date": "2020-02-29",
+        "end_time": "21:45:00",
+        "entry_time": "09:40:00",
+        "optional_package_1_name": "Ich bin damit einverstanden, regelm\u00e4\u00dfig Informationen per E-Mail zu erhalten. ",
+        "optional_package_2_name": "",
+        "optional_package_3_name": "",
+        "optional_package_4_name": "",
+        "optional_package_5_name": "",
+        "optional_package_6_name": "",
+        "optional_package_7_name": "",
+        "optional_package_8_name": "",
+        "optional_package_9_name": "",
+        "optional_package_10_name": "",
+        "optional_package_11_name": "",
+        "optional_package_12_name": "",
+        "optional_package_13_name": "",
+        "optional_package_14_name": "",
+        "optional_package_15_name": "",
+        "optional_package_16_name": "",
+        "optional_package_17_name": "",
+        "optional_package_18_name": "",
+        "optional_package_19_name": "",
+        "optional_package_20_name": "",
+        "public_url": "events-richtig-planen"
+      },
+      "Package": {
+        "name": "Paket 111x buchbar"
+      },
+      "action": "signup"
+    }))
+    var data = JSON.parse(decodeURIComponent(json))
+    console.log(data);
+    $('#data-jason').val(data)
+    $("#hiking__form").submit(function(e) {
+      e.preventDefault();
+      url="https://www.eventmanager-online.com/de/event/test2-1/if";
+      data1=data;
+      data2="value";
+      $.ajax({
+        datatype:"html",
+        type: "POST",
+        url: url,
+        data: {data1:data1,data2:data2},
+        success: function(html)
+        {
+          alert(html);
+        },
+        error: function(e) {
+          console.log('error:', e);
+        }
+      });
+    });
+
+  })</script>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <ul class="nav nav-pills float-right">
+      <li class="nav-item">
+        <a href="#" class="nav-link active">Home</a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">About</a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+    <h3 class="text-muted">coop</h3>
+  </div>
+
+  <div class="jumbotron">
+
+  </div>
+
+  <div class="row marketing container">
+    <div class="header">
+      <a href="../index.html">Back</a>
+      <form method="post" id="hiking__form" action="https://www.eventmanager-online.com/de/event/test2-1/if">
+        <input type="hidden" id="data-jason" name="EV_SUBDATA" value="">
+        <div class="form__checkboxes">
+          <div>
+            <input id="rigi" class="form__checkbox" type="checkbox" name="optional_package_2"/>
+            <label for="rigi">Checkbox 1</label>
+          </div>
+          <div>
+            <input id="vaduz" class="form__checkbox" type="checkbox" name="#vaduz" />
+            <label for="vaduz">Checkbox 2</label>
+          </div>
+          <div>
+            <input id="uetliberg" class="form__checkbox" type="checkbox" name="#uetliberg" />
+            <label for="uetliberg">Checkbox 3</label>
+          </div>
+        </div>
+        <input id="edit_result" type="submit"  />
+      </form>
+
+
+    </div>
+
+  </div>
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+  <!-- build:js scripts/vendor.js -->
+  <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- endbuild -->
+  <!-- build:js scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
